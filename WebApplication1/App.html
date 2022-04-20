@@ -31,8 +31,8 @@
         <input type"text" ng-model="carro.modelo" placeholder="Modelo" />
         <input type"text" ng-model="carro.anoModelo" placeholder="Ano Modelo" />
         <hr />
-        <button ng-click="$scope.adicionarCarro(carro)" ng-disabled="!carro.marca || !carro.modelo || !carro.anoModelo">Adicionar Carro</button>
-        <button ng-click="$scope.apagarCarros()">Apagar Carro</button>
+        <button ng-click="adicionarCarro(carro)" ng-disabled="!carro.marca || !carro.modelo || !carro.anoModelo">Adicionar Carro</button>
+        <button ng-click="apagarCarros()">Apagar Carro</button>
     </div>
 </body>
 </html>
