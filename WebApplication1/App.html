@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <style>
+        .selecionado{
+            font-weight: bold;
+        }
+    </style>
+    <script src="Scripts/angular.js"></script>
+    <script src="appcontroller.js"></script>
+    <title></title>
+</head>
+<body ng-controller="myController">   
+    <div>
+        <table>
+            <tr>
+                <th></th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+            </tr>
+            <tr ng-class="{selecionado:carro.selecionado}" ng-repeat="carro in carros">
+                <td><input type="checkbox" ng-model="carro.selecionado" /></td>
+                <td>{{carro.marca}}</td>
+                <td>{{carro.modelo}}</td>
+                <td>{{carro.anoModelo}}</td>
+            </tr>
+        </table>
+        <hr />
+        <input type"text" ng-model="carro.marca" placeholder="Marca" />
+        <input type"text" ng-model="carro.modelo" placeholder="Modelo" />
+        <input type"text" ng-model="carro.anoModelo" placeholder="Ano Modelo" />
+        <hr />
+        <button ng-click="$scope.adicionarCarro(carro)" ng-disabled="!carro.marca || !carro.modelo || !carro.anoModelo">Adicionar Carro</button>
+        <button ng-click="$scope.apagarCarros()">Apagar Carro</button>
+    </div>
+</body>
+</html>
