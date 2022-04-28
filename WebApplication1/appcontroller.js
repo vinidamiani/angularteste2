@@ -12,13 +12,11 @@ myApp.controller("myController", function ($scope) {
         { marca: "BMW", modelo: "328i", anoModelo: "1998" },
         { marca: "Hyundai", modelo: "Tucson", anoModelo: "2013" }
     ];
-    var showSuccessAlert = true;
-    var successTextAlert = "Carro Adicionado com Sucesso";
-
+    
     $scope.carros = carros;
     $scope.carro = {};
-    $scope.successTextAlert = successTextAlert;
-    $scope.showSuccessAlert = showSuccessAlert;
+    $scope.successTextAlert = "Carro Adicionado com Sucesso";
+    $scope.showSuccessAlert = true;
 
     $scope.activate = function () {
         console.log($scope.carro);
@@ -41,6 +39,10 @@ myApp.controller("myController", function ($scope) {
         return !carros.some(function (carro) {
             return carro.selecionado;
         });
+    };
+
+    $scope.fecharAlerta = function () {
+        $scope.showSuccessAlert = false;
     };
 
     //cliclo de vida inicial da controller no angularJS, sempre que acionar esse metodo é executado, o mesmo que o evento js => onInit

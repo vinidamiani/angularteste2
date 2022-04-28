@@ -49,9 +49,9 @@
         <button ng-click="adicionarCarro(carro)" ng-disabled="!carro.marca || !carro.modelo || !carro.anoModelo">Adicionar Carro</button>
         <button ng-click="apagarCarros(carros)" ng-disabled="isCarroSelecionado(carros)">Apagar Carro</button>
     </div>
-    {{successTextAlert}}
+    
     <div class="alert alert-success" ng-show="showSuccessAlert">
-        <button type="button" class="close" ng-click="switchBool(showSuccessAlert)">×</button>
+        <button type="button" class="close" ng-click="fecharAlerta()">×</button>
         <strong>Done!</strong> {{successTextAlert}}
     </div>
 </body>

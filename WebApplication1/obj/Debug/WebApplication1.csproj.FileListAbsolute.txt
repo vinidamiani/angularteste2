@@ -113,7 +113,6 @@ C:\inetpub\wwwroot\TFS\ViniciusGitHub\AngularTeste2\WebApplication1\bin\Microsof
 C:\inetpub\wwwroot\TFS\ViniciusGitHub\AngularTeste2\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\inetpub\wwwroot\TFS\ViniciusGitHub\AngularTeste2\WebApplication1\obj\Debug\WebApplication1.csproj.AssemblyReference.cache
 C:\inetpub\wwwroot\TFS\ViniciusGitHub\AngularTeste2\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
-C:\inetpub\wwwroot\TFS\ViniciusGitHub\AngularTeste2\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\inetpub\wwwroot\TFS\ViniciusGitHub\AngularTeste2\WebApplication1\obj\Debug\WebApplication1.dll
 C:\inetpub\wwwroot\TFS\ViniciusGitHub\AngularTeste2\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\ViniciusDamiani\source\repos\Angular\angularteste\WebApplication1\bin\WebApplication1.dll.config
