@@ -1,17 +1,32 @@
 ﻿<!DOCTYPE html>
 <html ng-app="myModule">
 <head>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css"/>
     <style>
-        .selecionado{
+        .aplicacao{
+            width: 600px;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <style>
+        .selecionado {
             font-weight: bold;
         }
     </style>
     <script src="Scripts/angular.js"></script>
     <script src="appcontroller.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+        $("#ano").mask("0000");
+    </script>
     <title></title>
 </head>
-<body ng-controller="myController">   
-    <div>
+<body ng-controller="myController">
+    <div class="aplicacao">
         <table>
             <tr>
                 <th></th>
@@ -29,10 +44,15 @@
         <hr />
         <input type"text" ng-model="carro.marca" placeholder="Marca" />
         <input type"text" ng-model="carro.modelo" placeholder="Modelo" />
-        <input type"text" ng-model="carro.anoModelo" placeholder="Ano Modelo" />
+        <input type"text" ng-model="carro.anoModelo" placeholder="Ano Modelo" id="ano" />
         <hr />
         <button ng-click="adicionarCarro(carro)" ng-disabled="!carro.marca || !carro.modelo || !carro.anoModelo">Adicionar Carro</button>
-        <button ng-click="apagarCarros()">Apagar Carro</button>
+        <button ng-click="apagarCarros(carros)" ng-disabled="isCarroSelecionado(carros)">Apagar Carro</button>
+    </div>
+    {{successTextAlert}}
+    <div class="alert alert-success" ng-show="showSuccessAlert">
+        <button type="button" class="close" ng-click="switchBool(showSuccessAlert)">×</button>
+        <strong>Done!</strong> {{successTextAlert}}
     </div>
 </body>
 </html>
