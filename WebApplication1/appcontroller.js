@@ -15,8 +15,8 @@ myApp.controller("myController", function ($scope) {
     
     $scope.carros = carros;
     $scope.carro = {};
-    $scope.successTextAlert = "Carro Adicionado com Sucesso";
-    $scope.showSuccessAlert = true;
+    $scope.successTextAlert = "Operação concluida com sucesso";
+    $scope.showSuccessAlert = false;
 
     $scope.activate = function () {
         console.log($scope.carro);
@@ -26,13 +26,16 @@ myApp.controller("myController", function ($scope) {
     $scope.adicionarCarro = function (carro) {
         $scope.carros.push(carro);
         delete $scope.carro;
-        
+        $scope.successTextAlert = "Carro inserido com sucesso";
+        $scope.showSuccessAlert = true;
     };
 
     $scope.apagarCarros = function () {
         $scope.carros = carros.filter(function (carro) {
             if (!carro.selecionado) return carro;
         });
+        $scope.successTextAlert = "Carro apagado com sucesso";
+        $scope.showSuccessAlert = true;
     };
 
     $scope.isCarroSelecionado = function (carros) {
