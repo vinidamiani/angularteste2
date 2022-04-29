@@ -6,7 +6,8 @@ var myApp = angular.module("MyModule", ["ngRoute"]);
 myApp.config(function ($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl: "templates/teste.html"            
+            templateUrl: "templates/home.html",
+            controller: "HomeController"
         })
         .when("/lista", {
             templateUrl: "templates/lista.html",
