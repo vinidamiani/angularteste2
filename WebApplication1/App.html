@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
 <html ng-app="myModule">
 <head>
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css" />
     <style>
-        .aplicacao{
+        .aplicacao {
             width: 600px;
             text-align: center;
             margin-top: 20px;
@@ -18,6 +18,7 @@
     </style>
     <script src="Scripts/angular.js"></script>
     <script src="appcontroller.js"></script>
+    <script src="Scripts/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <script type="text/javascript">
@@ -25,34 +26,8 @@
     </script>
     <title></title>
 </head>
-<body ng-controller="myController">
-    <div class="aplicacao">
-        <table>
-            <tr>
-                <th></th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Ano</th>
-            </tr>
-            <tr ng-class="{selecionado:carro.selecionado}" ng-repeat="carro in carros">
-                <td><input type="checkbox" ng-model="carro.selecionado" /></td>
-                <td>{{carro.marca}}</td>
-                <td>{{carro.modelo}}</td>
-                <td>{{carro.anoModelo}}</td>
-            </tr>
-        </table>
-        <hr />
-        <input type"text" ng-model="carro.marca" placeholder="Marca" />
-        <input type"text" ng-model="carro.modelo" placeholder="Modelo" />
-        <input type"text" ng-model="carro.anoModelo" placeholder="Ano Modelo" id="ano" />
-        <hr />
-        <button ng-click="adicionarCarro(carro)" ng-disabled="!carro.marca || !carro.modelo || !carro.anoModelo">Adicionar Carro</button>
-        <button ng-click="apagarCarros(carros)" ng-disabled="isCarroSelecionado(carros)">Apagar Carro</button>
-    </div>
-    
-    <div class="alert alert-success" ng-show="showSuccessAlert">
-        <button type="button" class="close" ng-click="fecharAlerta()">×</button>
-        <strong>Done!</strong> {{successTextAlert}}
-    </div>
+<body>
+    <a href ="#/lista">Lista</a>
+    <ng-view></ng-view>
 </body>
 </html>

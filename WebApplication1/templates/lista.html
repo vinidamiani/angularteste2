@@ -1,0 +1,28 @@
+﻿<div class="aplicacao">
+    <table>
+        <tr>
+            <th></th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Ano</th>
+        </tr>
+        <tr ng-class="{selecionado:carro.selecionado}" ng-repeat="carro in carros">
+            <td><input type="checkbox" ng-model="carro.selecionado" /></td>
+            <td>{{carro.marca}}</td>
+            <td>{{carro.modelo}}</td>
+            <td>{{carro.anoModelo}}</td>
+        </tr>
+    </table>
+    <hr />
+    <input type"text" ng-model="carro.marca" placeholder="Marca" />
+    <input type"text" ng-model="carro.modelo" placeholder="Modelo" />
+    <input type"text" ng-model="carro.anoModelo" placeholder="Ano Modelo" id="ano" />
+    <hr />
+    <button ng-click="adicionarCarro(carro)" ng-disabled="!carro.marca || !carro.modelo || !carro.anoModelo">Adicionar Carro</button>
+    <button ng-click="apagarCarros(carros)" ng-disabled="isCarroSelecionado(carros)">Apagar Carro</button>
+</div>
+
+<div class="alert alert-success" ng-show="showSuccessAlert">
+    <button type="button" class="close" ng-click="fecharAlerta()">×</button>
+    <strong>Done!</strong> {{successTextAlert}}
+</div>

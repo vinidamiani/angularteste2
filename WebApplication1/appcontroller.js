@@ -1,7 +1,14 @@
 ﻿/// <reference path="scripts/angular.min.js" />
 
 
-var myApp = angular.module("myModule", []);
+var myApp = angular.module("myModule", ["ngRoute"])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when("/lista", {
+                templateUrl: "templates/teste.html",
+                controller: "myController"
+            })
+    });
 
 myApp.controller("myController", function ($scope) {
 
