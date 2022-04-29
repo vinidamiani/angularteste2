@@ -1,16 +1,9 @@
 ﻿/// <reference path="scripts/angular.min.js" />
 
 
-var myApp = angular.module("myModule", ["ngRoute"])
-    .config(function ($routeProvider) {
-        $routeProvider
-            .when("/lista", {
-                templateUrl: "templates/teste.html",
-                controller: "myController"
-            })
-    });
+var myApp = angular.module("MyModule");
 
-myApp.controller("myController", function ($scope) {
+myApp.controller("ListaController", function ($scope) {
 
     //Defina todas as propriedados, objetos, funcoes que serao usados no inicio da controller
 
@@ -19,7 +12,7 @@ myApp.controller("myController", function ($scope) {
         { marca: "BMW", modelo: "328i", anoModelo: "1998" },
         { marca: "Hyundai", modelo: "Tucson", anoModelo: "2013" }
     ];
-    
+
     $scope.carros = carros;
     $scope.carro = {};
     $scope.successTextAlert = "Operação concluida com sucesso";

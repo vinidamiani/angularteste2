@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="myModule">
+<html ng-app="MyModule">
 <head>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css" />
     <style>
@@ -17,8 +17,9 @@
         }
     </style>
     <script src="Scripts/angular.js"></script>
-    <script src="appcontroller.js"></script>
     <script src="Scripts/angular-route.js"></script>
+    <script src="app-controller.js"></script>
+    <script src="lista-controller.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <script type="text/javascript">
@@ -27,7 +28,8 @@
     <title></title>
 </head>
 <body>
-    <a href ="#/lista">Lista</a>
     <ng-view></ng-view>
+    <!--<a href="#" ng-click="redirectLista()">Lista</a>
+    <a href="#" ng-click="redirectLista()">Teste</a>-->
 </body>
 </html>

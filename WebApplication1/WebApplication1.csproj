@@ -67,8 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.html" />
-    <Content Include="appcontroller.js" />
+    <Content Include="lista-controller.js" />
+    <Content Include="index.html" />
+    <Content Include="app-controller.js" />
     <Content Include="Imagens\Uno.png" />
     <Content Include="lib\bootstrap\bootstrap.css" />
     <Content Include="Scripts\angular-animate.js" />
