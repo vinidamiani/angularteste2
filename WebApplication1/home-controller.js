@@ -3,7 +3,10 @@
 
 var myApp = angular.module("MyModule");
 
-myApp.controller("HomeController", function ($scope) {
+myApp.controller("HomeController", function ($scope, $location) {
 
-    $scope.teste = "samambaia";
+    $scope.changeRoute = function(view)
+    {
+        $location.path(view);
+    };
 });
