@@ -22,9 +22,8 @@
     <hr />
     <button ng-click="adicionarCarro(carro)" ng-disabled="carroForm.$invalid">Adicionar Carro</button>
     <button ng-click="apagarCarros(carros)" ng-disabled="isCarroSelecionado(carros)">Apagar Carro</button>
+    <hr />
+    <button ng-click="changeRoute('')">Voltar</button>
 </div>
+<div ui-alert ng-show="showAlert"></div>
 
-<div class="alert alert-success" ng-show="showSuccessAlert">
-    <button type="button" class="close" ng-click="fecharAlerta()">×</button>
-    <strong>Done!</strong> {{successTextAlert}}
-</div>

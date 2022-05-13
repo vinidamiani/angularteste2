@@ -3,7 +3,7 @@
 
 var myApp = angular.module("MyModule");
 
-myApp.controller("ListaController", function ($scope) {
+myApp.controller("ListaController", function ($scope, $location) {
 
     //Defina todas as propriedados, objetos, funcoes que serao usados no inicio da controller
 
@@ -15,8 +15,9 @@ myApp.controller("ListaController", function ($scope) {
 
     $scope.carros = carros;
     $scope.carro = {};
-    $scope.successTextAlert = "Operação concluida com sucesso";
-    $scope.showSuccessAlert = false;
+    $scope.textAlert = "Operação concluida com sucesso";
+    $scope.showAlert = false;
+    $scope.classeAlerta = "ui-alert-error";
 
     $scope.activate = function () {
         console.log($scope.carro);
@@ -26,16 +27,18 @@ myApp.controller("ListaController", function ($scope) {
     $scope.adicionarCarro = function (carro) {
         $scope.carros.push(carro);
         delete $scope.carro;
-        $scope.successTextAlert = "Carro inserido com sucesso";
-        $scope.showSuccessAlert = true;
+        $scope.textAlert = "Carro inserido com sucesso";
+        $scope.showAlert = true;
+        $scope.classeAlerta = "ui-alert-success";
     };
 
     $scope.apagarCarros = function () {
         $scope.carros = carros.filter(function (carro) {
             if (!carro.selecionado) return carro;
         });
-        $scope.successTextAlert = "Carro apagado com sucesso";
-        $scope.showSuccessAlert = true;
+        $scope.textAlert = "Carro apagado com sucesso";
+        $scope.showAlert = true;
+        $scope.classeAlerta = "ui-alert-error";
     };
 
     $scope.isCarroSelecionado = function (carros) {
@@ -45,7 +48,11 @@ myApp.controller("ListaController", function ($scope) {
     };
 
     $scope.fecharAlerta = function () {
-        $scope.showSuccessAlert = false;
+        $scope.showAlert = false;
+    };
+
+    $scope.changeRoute = function (view) {
+        $location.path(view);
     };
 
     //cliclo de vida inicial da controller no angularJS, sempre que acionar esse metodo é executado, o mesmo que o evento js => onInit
