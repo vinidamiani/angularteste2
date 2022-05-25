@@ -26,4 +26,9 @@
     <button ng-click="changeRoute('')">Voltar</button>
 </div>
 <div ui-alert ng-show="showAlert"></div>
+<div>
+    <p ng-repeat="x in dataService">
+        {{x.fact}}
+    </p>
+</div>
 

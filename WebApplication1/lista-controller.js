@@ -3,7 +3,7 @@
 
 var myApp = angular.module("MyModule");
 
-myApp.controller("ListaController", function ($scope, $location) {
+myApp.controller("ListaController", function ($scope, $location, dataService) {
 
     //Defina todas as propriedados, objetos, funcoes que serao usados no inicio da controller
 
@@ -54,6 +54,11 @@ myApp.controller("ListaController", function ($scope, $location) {
     $scope.changeRoute = function (view) {
         $location.path(view);
     };
+
+    dataService.getTipoVeiculo(function (data) {
+        console.log('2');
+        $scope.dataService = data;
+    });
 
     //cliclo de vida inicial da controller no angularJS, sempre que acionar esse metodo é executado, o mesmo que o evento js => onInit
     $scope.activate();
